@@ -1,11 +1,10 @@
-import serverConfig from "./config/serverConfig.js";
+import { WinstonLogger as logger, ServerConfig } from "./config/index.js";
 import express from "express";
+import { infoRoutes } from "./routes/index.js";
 const app = express();
 
-app.get('/', (_, res)=>{
-  res.json({message: "server is running"})
-})
+app.use("/api", infoRoutes);
 
-app.listen(serverConfig.PORT, ()=>{
-  console.log(`Server is runnig on port ${serverConfig.PORT}`)
-})
+app.listen(ServerConfig.PORT, () => {
+  logger.info(`Server is runnig on port ${ServerConfig.PORT}`);
+});
