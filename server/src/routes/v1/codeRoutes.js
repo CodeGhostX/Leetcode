@@ -1,7 +1,7 @@
 import express from 'express'
-import { getOutput } from '../../controllers/index.js';
+import { getCppOutput } from '../../controllers/index.js';
 const router = express.Router();
 
-router.post('/run', getOutput);
+router.post('/run', getCppOutput);
 
 export default router;

@@ -1,5 +1,5 @@
 # Use official Node.js base image with Debian
-FROM node:20-slim
+FROM node:22-slim
 
 # Install g++ for compiling C++ code
 RUN apt-get update && apt-get install -y g++
