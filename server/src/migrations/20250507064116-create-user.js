@@ -29,6 +29,14 @@ module.exports = {
           isEmail: true
         }
       },
+      password: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false,
+        validate:{
+          len:[6, 16] 
+        }
+      },
       gender: {
         type: Sequelize.ENUM("MALE", "FEMALE", "OTHERS"),
         allowNull: false
