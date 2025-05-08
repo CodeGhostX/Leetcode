@@ -1,0 +1,19 @@
+1.
+     title:" Single Number"  
+     desc:"Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+     You must implement a solution with a linear runtime complexity and use only constant extra space."
+     input:
+         [2,2,1]  exp_out: 1
+         [4,1,2,1,2] exp_out: 4
+         [1] exp_out:1
+
+2.
+     title: "Pascal's Triangle"
+     desc: "Given an integer numRows, return the first numRows of Pascal's triangle.
+            In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:"
+    input:
+         5 exp_out:[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+         1 exp_out:[[1]]
+
+
+        
