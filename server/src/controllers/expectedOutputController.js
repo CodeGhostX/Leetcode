@@ -73,6 +73,29 @@ export const getAllExpectedOutputById = async(req,res) =>{
     }
 }
 
+export const updateExpectedOutput = async(req,res) =>{
+    const id = req.params.id;
+    const updates = req.body;
+
+    try{
+        const [affectedRows] = await ExpectedOutput.update(updates, { where: { id } });
+
+        if (!affectedRows) {
+            console.log("Expected output not updated or not found");
+            ErrorResponse.message = "Expected output not updated or not found";
+            return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
+        }
+        const updatedOutput = await ExpectedOutput.findByPk(id);
+
+        SuccessResponse.message = "Expected output updated successfully";
+        SuccessResponse.data = updatedOutput;
+        return res.status(StatusCodes.OK).json(SuccessResponse);
+    }catch (error) {
+        console.error(error.message);
+        ErrorResponse.message = error.message;
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(ErrorResponse);
+    }
+}
 export const deleteExpectedOutput = async(req,res) =>{
     const id = req.params.id;
     try{
