@@ -96,6 +96,7 @@ export const updateExpectedOutput = async(req,res) =>{
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(ErrorResponse);
     }
 }
+
 export const deleteExpectedOutput = async(req,res) =>{
     const id = req.params.id;
     try{
